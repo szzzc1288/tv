@@ -1,6 +1,7 @@
 name: itvlist
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 21 * * *'
   push:
@@ -23,7 +24,7 @@ jobs:
 
       - name: Install dependencies
         #run: pip install selenium==4.19.0 requests==2.31.0 futures==3.0.5 eventlet==0.36.1
-        run: pip install selenium requests futures eventlet
+        run: pip install selenium requests futures eventlet aiohttp aiofiles asyncio
 
       #- name: Run itv_all
         #run: python ${{ github.workspace }}/itv_all.py
@@ -43,6 +44,6 @@ jobs:
           git config --local user.name "szzzc1288"
           git add .
           git commit *.txt -m "Add generated file"
-          git commit *.m3u -m "Add generated file"
+          #git commit *.m3u -m "Add generated file"
           #git pull --rebase
           git push -f

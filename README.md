@@ -1,7 +1,7 @@
 # 自动获取酒店源  组播源 #
+## 参考[AQinTrue](https://github.com/AQinTrue/AQinTrue)提供的异步方式修改程序，优化网络请求。
 ## 不再依赖chrome浏览器及fofa等网站，windows系统可直接运行itvall.exe文件，大概45分钟。 ##
-### docker打包好的镜像可以在这里下载：### 
-链接: https://pan.baidu.com/s/1NFv2K-uES0imKxG4XNh4fQ 提取码: 3s32
+### docker未重新打包。。。。。。
 
 使用方法：
 
@@ -16,22 +16,19 @@
 
   windows电脑：
   
-      1.1 电脑安装最新的chrome，同时执行文件目录下要有对应版本的chromedriver.exe，
-      1.2 下载windows目录下的itv.exe及itvtest.exe,
-      1.3 首先运行itv.exe，完成后再运行itvtest.exe，
-      1.4 运行完成后在当前目录下生成电视直播文件itvlist.txt。
+      1.1 下载当前目录下的itvall.exe,
+      1.2 运行完成后在当前目录下生成电视直播文件itvlist.txt。
   
   有安装python的电脑：
   
-      2.1 电脑安装chrome，下载对应版本的chromedriver
-      2.2 下载itv.py cctv.py weishi.py qita.py
-      2.3 pip install selenium requests futures eventlet opencv-python
-      2.4 依次运行itv.py cctv.py weishi.py qita.py
-      2.5 运行完成后在当前目录下生成电视直播文件itvlist.txt。
+      2.1 下载new.py
+      2.2 pip install requests futures eventlet
+      2.3 运行new.py
+      2.4 运行完成后在当前目录下生成电视直播文件itvlist.txt。
 
 3.在openwrt或群辉的docker运行：
 
-        1.安装：docker pull liuxipo/itvall:latest
+        1.安装：docker pull liuxipo/itvall:amd64  或者 docker pull liuxipo/itvall:arm64
         2.运行：docker run -v /www/itvall:/app itvall
         3.访问：http://本地ip/itvall/itvlist.txt
   
